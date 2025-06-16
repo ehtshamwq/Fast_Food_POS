@@ -1,14 +1,15 @@
 # Fast_Food_POS
 This is fast food pOs in HTML, CSS, JavaScript,  and Bootstrap 
-
 <h1 align="center">Hi 👋, I'm ehtsham ul haq</h1>
 <h3 align="center">A passionate frontend developer form pakistan</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ehtshamwq&label=Profile%20views&color=0e75b6&style=flat" alt="ehtshamwq" /> </p>
 
-- 🔭 I’m currently a student on a class project **food pos**
+- 🔭 I’m currently student class project [food pos](https://ehtshamwq.github.io/Fast_Food_POS/)
 
 - 🌱 i am used language in this projects **html css and JavaScript and some used bootstraps**
+
+- 🧾 How to Use the Fast Food POS System **1️⃣ Open the POS System Launch the POS web application in your browser or from your system. 2️⃣ Select a Category On the main screen, the first step is to select a food category (e.g., Burgers, Drinks, Snacks). Once you click a category, it will display all the menu items in that category. 3️⃣ Choose Items to Sell Browse the list of items shown under the selected category. Click on the item you want to sell. The item will be added to the cart automatically. 4️⃣ Cart and Pricing As items are added, the cart section updates: Shows item name, quantity, and individual prices. Calculates subtotal. If a discount or tax is applicable, it's shown clearly. You’ll see the final total amount to be paid. 5️⃣ Complete the Order After all items are added, click the "Complete" or "Checkout" button. A popup window will appear asking you to select the payment method: Example options: Cash, Card, Mobile Payment. 6️⃣ Print the Bill Once the payment method is selected, click the "Print" button. A bill/invoice popup will open showing: All order items Tax, discounts, and final total Payment method This window will auto-print the bill. 7️⃣ Start New Order After printing, click the "New Order" button. The POS system will reset and return to the home screen, ready for the next customer. 8️⃣ Admin Summary Panel In the admin view or dashboard: You can see all completed orders. View total revenue, order count, and daily sales summary. Useful for daily reports and business insights.**
 
 - 📫 How to reach me **ehtshamhaqnawaz2@gmail.com**
 
