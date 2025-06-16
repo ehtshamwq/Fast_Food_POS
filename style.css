@@ -86,8 +86,16 @@ html, body {
     padding: 20px 0;    
     margin-top: 10px;
     margin-left: 20px;
+   
     
    
+}
+#menu-item{
+      display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .menu-item_a{
  border:  solid 2px #2E86AB;
@@ -114,6 +122,8 @@ html, body {
 }
 .boxes .left{
     width: 60%;
+   
+
  
 }
 
@@ -255,7 +265,7 @@ html, body {
     padding: 20px;
     box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08);
     border-radius: 18px;
-    position: fixed;
+    position: absolute;
     top: 70px;
     background-color: gray !important;
     margin-left: 90px;
@@ -366,7 +376,7 @@ html, body {
   top: 70px;
   right: -1%;
   width: 40%;
-  height: 120vh;
+  height: 180vh;
     background-color: white;
   transition: right 0.3s ease;
   z-index: 999;
@@ -455,3 +465,75 @@ html, body {
    cursor: pointer;
 
 }
+/* make this responsive  */
+@media screen and (max-width: 768px) {
+  /* Add responsive styles here */
+  .category{
+    width: 100%;
+  }
+  .boxes{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .boxes .right{
+    width: 90%;
+  }
+  .boxes .left{
+    width: 100%;
+  }
+  .pay_box{
+    width: 100%;
+    right: 0px;
+  }
+  #admin{
+    width: 50%;
+    top: 200px;
+  }
+  .custom{
+    margin-top: 30px;
+  }
+  .pay_method_box{
+
+    flex-direction: column;
+  }
+  
+
+
+
+}
+@media screen and (max-width: 425px){
+    .pay_box{
+        width: 100%;
+        right: 0px;
+    }
+    .custom{
+    margin-top: 30px;
+    width: 100%;
+  }
+  .pay_method_box{
+
+    flex-direction: column;
+  }
+
+}
+@media screen and (max-width: 375px){
+     .category{
+    width: 100%;
+   
+    flex-wrap: wrap;
+
+  }
+  .category div{
+    width: 40%;
+  }
+  #admin{
+    width: 70%;
+    top: 200px;
+  }
+  
+
+
+}
+
+    
+

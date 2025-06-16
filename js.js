@@ -237,29 +237,47 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close pay box on escape key
   let payoption = document.getElementsByClassName("pay_method");
   let shopay = document.getElementById("show_method");
+  var show_pay='';
+  var change='';
+  var cashReceived='';
+
+  
   Array.from(payoption).forEach((option, idx) => {
     option.addEventListener("click", () => {
       if(idx==0){
+        show_pay="this is card pay method"
+        alert(show_pay)
+       
         shopay.innerHTML = `<i class="fa-solid fa-credit-card"></i><h3>  Insert or swipe card when ready</h3>
         <p>Accepted: Visa, MasterCard, American Express</p>`;
       }
       if (idx === 1) {
+         show_pay="this is mobile pay method"
         shopay.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i> <h3>  Customer will tap their phone when ready</h3>
         <p>Accepted: Apple Pay, Google Pay, Samsung Pay</p>`;
       } if(idx==2 ){
+         show_pay="this is cash pay method"
        shopay.innerHTML = `<i class="fa-solid fa-money-bill-wave"></i><h3>  Cash Received:</h3>
        <input type="number" id="cash_received" placeholder="Enter cash received amount">`;
        let cashInput = document.getElementById("cash_received");
+       
        cashInput.addEventListener("change",()=>{
           // Remove previous messages
+
           const prevMsgs = shopay.querySelectorAll('.cash-msg');
           prevMsgs.forEach(msg => msg.remove());
+           
 
-          let cashReceived = parseFloat(cashInput.value);
+           cashReceived = parseFloat(cashInput.value);
+           
           if (!isNaN(cashReceived) && cashReceived >= totalWithTax) {
-            let change = cashReceived - totalWithTax;
-            shopay.innerHTML += `<p class="cash-msg">Change to return: $${change.toFixed(2)}</p>`;
-          } else if (!isNaN(cashReceived)) {
+             
+             change = cashReceived - totalWithTax;
+                      shopay.innerHTML += `<p class="cash-msg">Change to return: $${change.toFixed(2)}</p>`;
+          } 
+          else if (!isNaN(cashReceived)) {
+             change = cashReceived - totalWithTax;
+            
             shopay.innerHTML += `<p class="cash-msg">Please enter an amount greater than or equal to total.</p>`;
           }
        });
@@ -272,61 +290,49 @@ let printBtn = document.getElementById("print_order");
 if (printBtn) {
   printBtn.addEventListener("click", () => {
     const taxAmount = totalWithTax * 0.085;
-    const discountAmount = appliedDiscount > 0 ? totalWithTax * (appliedDiscount / 100) : 0;
-
-    let selectedPayment = document.querySelector(".pay_method.selected");
-    let paymentMethodText = selectedPayment ? selectedPayment.textContent.trim() : 'No payment method selected';
-
-    let cashReceived = 0;
-    let change = 0;
-    const cashInput = document.getElementById("cash_received");
-    if (cashInput) {
-      cashReceived = parseFloat(cashInput.value) || 0;
-      change = (cashReceived - totalWithTax).toFixed(2);
-    }
-
+    const discountAmount = appliedDiscount > 0 ? totalWithTax * (appliedDiscount / 100) : 0
     let itemsHtml = cart.map(item => `<p>${item.name} - $${item.price.toFixed(2)}</p>`).join("");
     let discountHtml = appliedDiscount > 0 ? `<h2>Discount Amount: $${discountAmount.toFixed(2)}</h2>` : "";
 
     let receiptHtml = `
       <html>
       <head>
-        <title>Receipt</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
-          h1, h2, h3, p { margin: 5px 0; }
-          .btn-group { margin-top: 20px; }
-          button { margin: 5px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
-          @media print { .btn-group { display: none; } }
-        </style>
+      <title>Receipt</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        h1, h2, h3, p { margin: 5px 0; }
+        .btn-group { margin-top: 20px; }
+        button { margin: 5px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        @media print { .btn-group { display: none; } }
+      </style>
       </head>
       <body>
-        <h1>Order Receipt</h1>
-        <h1>FastBite Restaurant</h1>
-        <h2>Phone: 0316-0143685</h2>
-        <h3>Order Number: ${Math.floor(Math.random() * 10000)}</h3>
-        <h3>Date: ${date.innerHTML}</h3>
-        <hr />
-        <h2>Items Ordered:</h2>
-        ${itemsHtml}
-        <hr />
-        <h2>Subtotal: $${totalWithTax.toFixed(2)}</h2>
-        <h2>Tax: $${taxAmount.toFixed(2)}</h2>
-        <h2>Total: $${totalWithTax.toFixed(2)}</h2>
-        <h2>Discount: ${appliedDiscount}%</h2>
-        ${discountHtml}
-        <h2>Payment Method:</h2>
-        <p>${paymentMethodText}</p>
-        <h2>Cash Received: $${cashReceived.toFixed(2)}</h2>
-        <h2>Change: $${change}</h2>
-        <hr />
-        <p>Thank you for your order!</p>
-        <h1>Have a great day!</h1>
+      <h1>Order Receipt</h1>
+      <h1>FastBite Restaurant</h1>
+      <h2>Phone: 0316-0143685</h2>
+      <h3>Order Number: ${Math.floor(Math.random() * 10000)}</h3>
+      <h3>Date: ${date.innerHTML}</h3>
+      <hr />
+      <h2>Items Ordered:</h2>
+      ${itemsHtml}
+      <hr />
+      <h2>Subtotal: $${(totalWithTax / 1.085).toFixed(2)}</h2>
+      <h2>Tax: $${(totalWithTax - (totalWithTax / 1.085)).toFixed(2)}</h2>
+      <h2>Total: $${totalWithTax.toFixed(2)}</h2>
+      <h2>Discount: ${appliedDiscount}%</h2>
+      ${discountHtml}
+      <h2>Payment Method:</h2>
+      <p>${show_pay}</p>
+      ${show_pay.includes('cash') ? `<h2>Cash Received: $${cashReceived ? cashReceived.toFixed(2) : '0.00'}</h2>
+      <h2>Change: $${change ? change.toFixed(2) : '0.00'}</h2>` : ''}
+      <hr />
+      <p>Thank you for your order!</p>
+      <h1>Have a great day!</h1>
 
-        <div class="btn-group">
-          <button onclick="window.print()">🖨️ Print Receipt</button>
-          <button onclick="window.close()">❌ Cancel</button>
-        </div>
+      <div class="btn-group">
+        <button onclick="window.print()">🖨️ Print Receipt</button>
+        <button onclick="window.close()">❌ Cancel</button>
+      </div>
       </body>
       </html>
     `;
@@ -334,17 +340,21 @@ if (printBtn) {
     let printWindow = window.open('', '_blank', 'width=600,height=800');
     printWindow.document.write(receiptHtml);
     printWindow.document.close();
-    printWindow.focus();
-     window.onfocus = function () {
-    let cancle = document.getElementById("cancle");
-    cancle.disabled = false;
-   
-    cancle.style.backgroundColor = "green";
-    cancle.style.cursor="pointer";
-     printWindow.document.close();// remove after it's done once
-  };
+  printWindow.addEventListener("afterprint" ,()=>{
+      let cancle = document.getElementById("cancle");
+    if (cancle) {
+        cancle.disabled = false;
+        cancle.style.backgroundColor = "green";
+        cancle.style.cursor = "pointer";
+    }
+
+    printWindow.close();
+  })
   });
+  
 }
+
+
 // print done/
 
  var cancle = document.getElementById("cancle");
@@ -363,22 +373,14 @@ cancle.addEventListener("click", () => {
   if (box_Revenue) {
     let current_reven=parseInt(box_Revenue.innerHTML) || 0;
    box_Revenue.innerHTML = (current_reven + parseFloat(totalWithTax)).toFixed(2);
-
- 
-
-  }
-
+  };
   let pay_box = document.getElementsByClassName("pay_box")[0];
   if (pay_box) pay_box.style.display = "none";
   shopay.innerHTML='';
-
-  
-
-  
-
-
-  cart.length = 0; // Clear the cart
-  updateCartDisplay(); // Update the cart display
+  cart.length = 0;
+   // Clear the cart
+  updateCartDisplay();
+   // Update the cart display
   cancle.disabled = true;
   cancle.style.background="red";
   cancle.style.cursor="not-allowed"
@@ -442,14 +444,7 @@ cancle.addEventListener("click", () => {
     // Reset form
     this.reset();
     alert('Menu item added successfully!');
-})
-// add slae report 
-
- 
-
-
-
-
+});
 
 
 });
