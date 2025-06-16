@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FastBite POS</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Free CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <div class="header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <h1><i class="fa-solid fa-burger"></i> FastBite POS</h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav account">
+            <li class="nav-item">
+              <h2><i class="fa-solid fa-user"></i> Cashier: John Doe</h2>
+            </li>
+            <li class="nav-item">
+              <h2 id="date">Date</h2>
+            </li>
+            <li class="nav-item button">
+              <button id="admin_bnt"><i class="fa-solid fa-user-tie"></i> Admin</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div> 
+   
+  <!-- nav end  --> 
+   <!-- category -bar  -->
+    
+      
+        
+      
+    <div class="category">
+        <div id="burger"  data-category="burger">   
+            <div class="text"> 
+                <i class="fa-solid fa-burger"></i>
+                <h5>Burger</h5>
+            </div>
+        </div>
+        <div id="pizza" data-category="pizza">
+            <div class="text"> 
+                <i class="fa-solid fa-pizza-slice"></i>
+                <h5>Pizza</h5>
+            </div>
+        </div>
+        <div id="drink" data-category="drink">
+            <div class="text"> 
+                <i class="fa-solid fa-mug-saucer"></i>
+                <h5>Drink</h5>
+            </div>
+        </div>
+        <div id="dessert" data-category="dessert">
+            <div class="text"> 
+                <i class="fa-solid fa-ice-cream"></i>
+                <h5>Dessert</h5>
+            </div>
+        </div>
+    </div> 
+    <div class="boxes">
+      <div class="left">
+
+ 
+      <div class="menu-item " id="menu-item">
+          <!-- date will be show using js  -->
+           <h1>select item you can buy</h1>
+        </div></div>
+         <!-- // add thinks is done  -->
+     <!-- make cart div  -->
+     
+        <div class="right">
+          <div class="order">
+            <h5>
+              Current Order
+            </h5>
+            <button>  <i class="fa-solid fa-trash"></i> 
+              clean all </button>
+          </div><hr>
+            <div class="show_itmes">
+            <i class="fa-solid fa-credit-card"></i>
+        <div>
+          <h5>No items in order</h5>
+        </div>
+          </div>
+          <hr>
+          <div class="total">
+            <div class="sub_total">
+                  <h4>Sub total:</h4>
+                  <span>0.00$</span>   
+            </div>
+            <div class="tax">
+              <h4>tax (8.5%):</h4> <span>0.00$ </span> </div>
+          </div>
+          <hr>
+            <div class="All_total">
+              <h4>Total:</h4> <span>0.00$ </span> </div>
+          <div class="pay">
+            <button id="pay"><i class="fa-solid fa-cash-register"></i> Pay NOW</button>
+          </div>
+           
+      </div>
+      
+      
+    </div>
+    <div class="pay_box"  style="display: none;">
+    <div   class="pay_box_content"> 
+      <div class="header_pay">
+        <h5>Payment Processing
+</h5>  <span class="close"><i class="fa-solid fa-xmark"></i></span>
+  </div><hr><hr>
+  <div id="Payment">
+    <h5> Total Amount:   <span class="span_pay"> 0.00$</span> </h5>
+
+  </div>
+  <!-- add pay method boxes  -->
+  <div class="pay_method_box">
+    <div class="pay_method">
+      <h4><i class="fa-solid fa-credit-card"></i> Card</h4>
+    </div>
+  
+  <div class="pay_method_box">
+    <<div class="pay_method">
+      <h4><i class="fa-solid fa-mobile-screen-button"></i> Mobile Pay</h4>
+    </div>
+ 
+  
+    <div class="pay_method">
+      <h4><i class="fa-solid fa-money-bill-wave"></i> Cash Pay</h4>
+    </div> </div>
+  </div>   
+  <!-- pay method box end  -->
+   <div id="show_method">  hello   </h1>
+</div><hr>
+<div class="print_order">
+  <button id="print_order"><i class="fa-solid fa-print"></i> Print Order</button>
+  <button id="cancle"   style="cursor: not-allowed; background-color: red;" disabled>   <i class="fa-solid fa-ban"></i> New order</button>
+</div>
+<div id="receipt">    
+  <!-- receipt will be show here -->
+</div>
+
+</div>
+
+  
+  
+  </div> </div>
+
+    <!-- end of right  -->
+  <!-- end of boxes  -->
+   <div class="custom"> 
+  <div id="discount">
+    <button><i class="fa-solid fa-percent"></i> discount!</button>
+  </div>
+  <div class="cu_item"> <button>Custom Item</button> 
+  </div></div>
+  <!-- end of custom  --> <!-- add custom items admin  -->
+   <div id="admin" style="display: none;"  >
+  <div id="admin_header">
+    <h1>Admin Panel</h1>  
+    <span id="close_plan"><i class="fa-solid fa-xmark"></i></span>
+  </div>
+  <div  id="add_item">
+    <h1>Add New Menu Item
+</h1>
+<form action="" id="item_add">
+  <!-- Fixed: no extra space in id -->
+  <input type="text" name="item_name" id="item_name" placeholder="Enter item"><br>
+
+  <!-- Fixed: Removed space from id "item_price " → "item_price" -->
+  <input type="number" name="price" id="item_price" placeholder="Enter item price"><br>
+
+  <select name="category" id="select_category">
+    <option value="">___select___</option>
+    <option value="burger">Burger</option>
+    <option value="pizza">Pizza</option>
+    <option value="drink">Drink</option>
+    <option value="dessert">Dessert</option>
+  </select><br>
+
+  <!-- Fixed: Removed space in type and id -->
+  <input type="text" name="description" id="description" placeholder="Description"><br>
+
+  <button type="submit" id="add">Add Item</button>
+</form> <hr><hr>
+
+<!-- Sales Summary -->
+ <div class="Sales_Summary
+">
+<h1>Sales Summary
+</h1></div>
+<div class="slae_boxes">
+  <div class="s_box">
+    <h1>0</h1>
+    <h1>today order</h1>
+  </div>
+  <div class="s_box"><h1>0</h1>
+    <h1>total Revenue Today</h1>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+
+ 
+
+    <script src="./menu-data.js"></script>
+<script src="./js.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-x: hidden !important; */
+}
+html, body {
+  overflow-x: hidden;
+}
+.header {
+    width: 100%;
+    background-color: orange;
+}
+
+.header nav {
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.header nav  ul li   h2 {
+    margin-right: 80px !important;
+}
+
+.button button {
+    background-color: #2E86AB;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+    animation: 2ms all;
+}
+.button button:hover{
+    transform: scale(1.1);
+    background-color: #5da9ca;
+}
+/* nav end  */
+
+.category {
+    margin-top: 5%;
+    width: 80%;
+    background-color: whitesmoke;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+} 
+
+.category div{
+     display: flex;
+    justify-content: center;
+    width: 20%;
+   padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.category div i {
+    margin-right: 15px;
+}
+/* .category div:hover {
+    transform: scale(1.1);
+    background-color: rgba(243, 180, 7, 0.445);
+} */
+.category .selected{
+    background-color: orange;
+}
+ .menu-item {
+   width: 100%;
+
+    align-items: center;
+    padding: 20px 0;    
+    margin-top: 10px;
+    margin-left: 20px;
+    
+   
+}
+.menu-item_a{
+ border:  solid 2px #2E86AB;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 30px 20px 15px rgba(145, 131, 131, 0.1);
+    transition: transform 0.2s;
+}
+.menu-item_a:hover {
+    transform: scale(1.05);
+    background-color: #2E86AB;
+    color: white;
+}
+
+.boxes{
+    
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-start;
+   
+    
+}
+.boxes .left{
+    width: 60%;
+ 
+}
+
+.boxes .right{ 
+    width: 30%;
+    margin-top: 5%;
+        box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+        background-color: #fff;
+        border-radius: 18px;
+        padding: 24px 18px;
+        transition: box-shadow 0.2s, transform 0.2s;
+   
+
+}
+.boxes .right .order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+    padding: 20px;
+}
+.boxes .right .order button{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    padding: 20px 10px;
+    background-color: #2E86AB;
+    border: none; 
+    border-radius: 10px;
+    cursor: pointer
+}
+.boxes .right .show_itmes{
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    box-shadow:  0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+ 
+}
+.boxes .right .total .sub_total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.boxes .right .total .tax{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.boxes .right .All_total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* show button work  */
+.cart-plus , .cart-minus{
+    background-color: orange;
+    font-size: 20px;
+    padding: 10px;
+
+}
+/* item add button  */
+.add-to-cart{
+    margin-left: 30px;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+   
+}
+/* pay button  */
+.pay #pay {
+    width: 80%;
+    margin: 0% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 30px;
+    border: none;
+    border-radius: 5px;
+    background: green; 
+    color: white;
+}
+.pay #pay:hover {
+    background-color: #2E86AB;
+    color: white;
+    transform: scale(1.1);
+}
+.pay #pay i {
+    margin-right: 30px;
+}
+/* end boxes  */
+.custom{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#discount  button{
+    background-color: #2E86AB;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    animation: 2ms all;
+    margin-left: 20px;
+    text-align: center;
+    padding: 20px;
+    color: whitesmoke;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1) 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+.cu_item button{
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    animation: 2ms all;
+    text-align: center;
+    background-color: #2E86AB;
+    border-radius: 5px;
+    padding: 20px;
+    color: whitesmoke;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1) 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* pay box  */
+.pay_box{
+    width:  50%;
+   
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+    border-radius: 18px;
+    position: fixed;
+    top: 70px;
+    background-color: gray !important;
+    margin-left: 90px;
+    opacity: 1;
+    z-index: index 999;;
+  
+
+    transition: transform 0.3s ease-in-out;
+    
+}
+.pay_box_content{
+    width: 100%;
+    height: 100%;
+    display: flex!important;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.pay_box  .pay_box_content .header_pay{
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.pay_box .header_pay .close{
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    margin-left: 30px;
+}
+.pay_box #Payment{
+
+  
+    display: block;
+    flex-direction: column;
+
+}
+.pay_method_box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.pay_box_content .pay_method{
+    width: 200px;
+    height: 100px;
+    border: 2px solid orange;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 20px rgba(230, 196, 196, 0.1) 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+.pay_box_content .pay_method i{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.pay_box_content .pay_method:hover{
+    transform: scale(1.1);
+    background-color: rgba(243, 180, 7, 0.445);
+    cursor: pointer;
+}
+#show_method{
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08); 
+}
+.print_order{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+    
+}
+.print_order button{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #2E86AB;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+.print_order button:hover{
+    background-color: #5da9ca;
+    transform: scale(0.9);
+}
+.print_order button i{
+    margin-left: 20px;
+
+}
+   /* <!-- add custom items admin  -->  */
+  #admin {
+  position: absolute;
+  top: 70px;
+  right: -1%;
+  width: 40%;
+  height: 120vh;
+    background-color: white;
+  transition: right 0.3s ease;
+  z-index: 999;
+  display: flex; /* Always use flex, just move in/out of view */
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+
+
+#admin_header {
+  display: flex;
+  width: 100%;
+  background-color: orange;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+
+#admin #admin_header #close_plan {
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#admin #admin_header #close_plan i:hover {
+  color: red;
+  transform: scale(1.1);
+}
+/* add item  */
+#item_add{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+#item_add input,
+#item_add select {
+    width: 100%;
+    border: solid 2px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+#item_add button {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#item_add button:hover{
+        background-color: lightgoldenrodyellow;
+        transform: scale(0.9);
+        color: orange;
+}
+/* <!-- Category items (initially hidden except Burger maybe) --> */
+/* <!-- Sales Summary -->  */
+.Sales_Summary{
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+    background-color: white;
+
+}
+.slae_boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;  
+}
+.slae_boxes .s_box{
+    width: 50%;
+   text-align: center;
+    padding: 20px;
+  background-color: whitesmoke;
+    border-radius: 10px;
+    margin-right: 10px;
+   cursor: pointer;
+
+}
